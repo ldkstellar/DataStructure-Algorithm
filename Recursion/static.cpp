@@ -4,7 +4,7 @@ using namespace std;
 // int x = 0; 전역변수는 데이터 섹션
 int constSum(int n) {
   if (n > 0) {
-    static int x = 0;  // 1 2 3 4 5
+    static int x = 0;  // 1 2 3 4 5 함수당 한개의 변수이다.
     ++x;
     return constSum(n - 1) + x;
   }
