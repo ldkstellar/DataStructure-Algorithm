@@ -12,7 +12,7 @@ int factorial_recursion(int n) {
   if (n == 0) {
     return 1;
   } else {
-    return factorial_recursion(n - 1) + n;
+    return factorial_recursion(n - 1) * n;
   }
 }
 int main(int argc, char const *argv[]) { return 0; }
