@@ -9,19 +9,20 @@ void merge(int* list, int left, int mid, int right) {
   k = left;
 
   while (i <= mid && j <= right) {
-    if (list[i] <= list[j])
+    if (list[i] <= list[j])  // 2개 나눈것 중에서크기비교
       sorted[k++] = list[i++];
     else
       sorted[k++] = list[j++];
   }
-  // 무조건 남는게 있다.
+  // 무조건 남는게 있다.남는것은 그대로 넣는다.
   if (i > mid)
     for (l = j; l <= right; l++) sorted[k++] = list[l];
 
   else
     for (l = i; l <= mid; l++) sorted[k++] = list[l];
 
-  for (l = left; l <= right; l++) list[l] = sorted[l];
+  for (l = left; l <= right; l++)
+    list[l] = sorted[l];  // 해당 부분을 다시 넣는다.
 }
 
 void merge_sort(int* list, int left, int right) {
@@ -33,6 +34,7 @@ void merge_sort(int* list, int left, int right) {
     merge(list, left, mid, right);
   }
 }
+
 int main(int argc, char const* argv[]) {
   int n = MAX_SIZE;
   int list[8] = {21, 10, 12, 20, 25, 13, 15, 22};
