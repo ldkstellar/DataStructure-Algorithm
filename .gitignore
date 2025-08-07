@@ -2,3 +2,4 @@
 *.out
 *.out.dSYM
 *.exe
+vc140.pdb
