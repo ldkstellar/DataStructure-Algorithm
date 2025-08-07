@@ -1,11 +1,13 @@
 #include <iostream>
 class Array {
  public:
+  void display();
+  void append(int x);
+  void insert(int index, int x);
+  ~Array();
   int *A;
   int size;
   int length;
-  void display();
-  ~Array();
 };
 
 void Array::display() {
@@ -13,6 +15,20 @@ void Array::display() {
     std::cout << A[i] << " ";
   }
   std::cout << "\n";
+}
+
+void Array::append(int x) {
+  if (length < size) {
+    A[length++] = x;
+  }
+}
+
+void ::Array::insert(int index, int x) {
+  if (index >= 0 && index <= length) {
+    for (size_t i = length; i > index; i--) A[i] = A[i - 1];
+    A[index] = x;
+    length++;
+  }
 }
 
 Array::~Array() { delete[] A; }
@@ -25,12 +41,13 @@ int main(int argc, char const *argv[]) {
   arr->A = new int[arr->size];
 
   std::cout << "Enter all Elements" << std::endl;
-  std::cin.clear();
+  std::cin.ignore();
   std::cin >> n;
+  arr->length = n;
   for (size_t i = 0; i < n; i++) {
     std::cin >> arr->A[i];
   }
-  arr->length = n;
+  arr->append(45);
   arr->display();
 
   delete arr;
