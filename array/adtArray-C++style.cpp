@@ -4,6 +4,7 @@ class Array {
   void display();
   void append(int x);
   void insert(int index, int x);
+  int remove(int index);
   ~Array();
   int *A;
   int size;
@@ -23,12 +24,25 @@ void Array::append(int x) {
   }
 }
 
-void ::Array::insert(int index, int x) {
+void Array::insert(int index, int x) {
   if (index >= 0 && index <= length) {
     for (size_t i = length; i > index; i--) A[i] = A[i - 1];
     A[index] = x;
     length++;
   }
+}
+
+int Array::remove(int index) {
+  int x = 0;
+  if (index >= 0 && index < length) {
+    x = A[index];
+    for (size_t i = index; i < length - 1; i++) {
+      A[i] = A[i + 1];
+      length--;
+      return x;
+    }
+  }
+  return 0;
 }
 
 Array::~Array() { delete[] A; }
@@ -48,6 +62,7 @@ int main(int argc, char const *argv[]) {
     std::cin >> arr->A[i];
   }
   arr->append(45);
+  
   arr->display();
 
   delete arr;
