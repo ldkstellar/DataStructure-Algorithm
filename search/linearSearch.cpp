@@ -5,7 +5,7 @@
 int linearSearch(Array& arr, int key) {
   for (size_t i = 0; i < arr.length; i++) {
     if (key == arr.A[i]) {
-      [&arr, i]() mutable {
+      [&arr, i]() {
         int temp;
         temp = arr.A[i];
         arr.A[i] = arr.A[i - 1];
