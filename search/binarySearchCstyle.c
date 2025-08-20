@@ -4,7 +4,7 @@
 struct Array
 {
     int* array;
-    int size;
+    int length;
     int length;
 };
 
@@ -21,7 +21,7 @@ void setArray(struct Array* arr,int length,...){
 }
 
 static inline void setSize(struct Array* arr,int size){
-    arr->size = size;
+    arr->length = size;
 }
 
 int binarySearch(const struct Array* arr,int key){

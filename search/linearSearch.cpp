@@ -19,7 +19,7 @@ int linearSearch(Array& arr, int key) {
 
 int main(int argc, char const* argv[]) {
   Array arr;
-  arr.size = 10;
+  arr.length = 10;
   arr.length = 5;
   arr.A = new int[5]{2, 3, 4, 5, 6};
 
