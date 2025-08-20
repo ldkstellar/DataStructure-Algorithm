@@ -20,7 +20,7 @@ void setArray(struct Array* arr,int length,...){
 
 }
 
-void setSize(struct Array* arr,int size){
+static inline void setSize(struct Array* arr,int size){
     arr->size = size;
 }
 
