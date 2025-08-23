@@ -7,7 +7,7 @@ class Array {
   int remove(int index);
   ~Array();
   int *A;
-  int size;
+  int length;
   int length;
 };
 
@@ -19,7 +19,7 @@ void Array::display() {
 }
 
 void Array::append(int x) {
-  if (length < size) {
+  if (length < length) {
     A[length++] = x;
   }
 }
@@ -51,8 +51,8 @@ int main(int argc, char const *argv[]) {
   int n;
   Array *arr = new Array;
   std::cout << "Enter number of numbers";
-  std::cin >> arr->size;
-  arr->A = new int[arr->size];
+  std::cin >> arr->length;
+  arr->A = new int[arr->length];
 
   std::cout << "Enter all Elements" << std::endl;
   std::cin.ignore();
@@ -62,7 +62,7 @@ int main(int argc, char const *argv[]) {
     std::cin >> arr->A[i];
   }
   arr->append(45);
-  
+
   arr->display();
 
   delete arr;

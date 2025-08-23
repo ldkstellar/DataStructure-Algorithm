@@ -6,6 +6,6 @@ class Array {
   int remove(int index);
   ~Array();
   int *A;
-  int size;
+  int length;
   int length;
 };

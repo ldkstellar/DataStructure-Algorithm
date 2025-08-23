@@ -2,7 +2,7 @@
 #include <stdlib.h>
 struct Array {
   int *A;
-  int size;
+  int length;
   int length;
   /* data */
 };
@@ -18,8 +18,8 @@ int main(int argc, char const *argv[]) {
   struct Array arr;
   int n;
   printf("Enter the size of array!\n");
-  scanf("%d", &arr.size);
-  arr.A = (int *)malloc(arr.size * sizeof(int));
+  scanf("%d", &arr.length);
+  arr.A = (int *)malloc(arr.length * sizeof(int));
   arr.length = 0;
   printf("Enter all Elements\n");
   scanf("%d", &n);

@@ -1,7 +1,7 @@
 #pragma once
-#include <iostream>
-
 #include "myArray.h"
+
+#include <iostream>
 void Array::display() {
   for (size_t i = 0; i < length; i++) {
     std::cout << A[i] << " ";
@@ -10,7 +10,7 @@ void Array::display() {
 }
 
 void Array::append(int x) {
-  if (length < size) {
+  if (length < length) {
     A[length++] = x;
   }
 }
