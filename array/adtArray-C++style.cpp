@@ -88,8 +88,8 @@ int Array::reverse() {
   int *temp;
   temp = new int[size];
 
-  for (int i = length - 1; i >= 0; i--) {
-    temp[(length - 1) - i] = A[i];
+  for (int i = length - 1, j = 0; i >= 0; i--, j++) {
+    temp[i] = A[j];
   }
   delete[] A;
   A = nullptr;  // delete 후 nullptr로 초기화.
