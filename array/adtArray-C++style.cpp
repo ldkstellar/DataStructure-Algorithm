@@ -7,6 +7,10 @@ class Array {
   void insert(int index, int x);
   void set(int index, int value);
   int remove(int index);
+  int sum();
+  float avg();
+  int max();
+  int reverse();
   ~Array();
   int *A;
   int size;
@@ -47,10 +51,54 @@ int Array::remove(int index) {
   return 0;
 }
 
+float Array::avg() {
+  int total = 0;
+  for (size_t i = 0; i < length; i++) {
+    total = total + A[i];
+  }
+
+  return (float)total / length;
+}
+
+int Array::sum() {
+  int total = 0;
+  for (size_t i = 0; i < length; i++) {
+    total = total + A[i];
+  }
+  return total;
+}
+
+int Array::max() {
+  int max = A[0];
+  for (size_t i = 0; i < length; i++) {
+    if (A[i] > max) {
+      max = A[i];
+    }
+  }
+  return max;
+}
+
 void Array::set(int index, int value) {
   if (index >= 0 && index <= length) {
     A[index] = value;
   }
+}
+
+int Array::reverse() {
+  int *temp;
+  temp = new int[size];
+
+  for (int i = length - 1; i >= 0; i--) {
+    temp[(length - 1) - i] = A[i];
+  }
+  delete[] A;
+  A = nullptr;  // delete 후 nullptr로 초기화.
+
+  if (!A) {
+    A = temp;
+    return 1;
+  }
+  return -1;
 }
 
 Array::~Array() { delete[] A; }
@@ -58,7 +106,7 @@ Array::~Array() { delete[] A; }
 int main(int argc, char const *argv[]) {
   int n;
   Array *arr = new Array;
-  std::cout << "Enter number of numbers";
+  std::cout << "Enter number of numbers" << std::endl;
   std::cin >> arr->size;
   arr->A = new int[arr->size];
 
@@ -70,8 +118,9 @@ int main(int argc, char const *argv[]) {
     std::cin >> arr->A[i];
   }
   arr->append(45);
-
+  arr->reverse();
   arr->display();
+  std::cout << arr->avg();
 
   delete arr;
 
