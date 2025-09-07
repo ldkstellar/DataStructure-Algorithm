@@ -1,13 +1,15 @@
 #include <iostream>
+
 class Array {
  public:
   void display();
   void append(int x);
   void insert(int index, int x);
+  void set(int index, int value);
   int remove(int index);
   ~Array();
   int *A;
-  int length;
+  int size;
   int length;
 };
 
@@ -19,7 +21,7 @@ void Array::display() {
 }
 
 void Array::append(int x) {
-  if (length < length) {
+  if (length < size) {
     A[length++] = x;
   }
 }
@@ -45,14 +47,20 @@ int Array::remove(int index) {
   return 0;
 }
 
+void Array::set(int index, int value) {
+  if (index >= 0 && index <= length) {
+    A[index] = value;
+  }
+}
+
 Array::~Array() { delete[] A; }
 
 int main(int argc, char const *argv[]) {
   int n;
   Array *arr = new Array;
   std::cout << "Enter number of numbers";
-  std::cin >> arr->length;
-  arr->A = new int[arr->length];
+  std::cin >> arr->size;
+  arr->A = new int[arr->size];
 
   std::cout << "Enter all Elements" << std::endl;
   std::cin.ignore();

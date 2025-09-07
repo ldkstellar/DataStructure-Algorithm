@@ -1,4 +1,5 @@
 #include <iostream>
+
 class Matrix {
  public:
   void set(int i, int j, int x);

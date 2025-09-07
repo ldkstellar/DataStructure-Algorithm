@@ -30,7 +30,7 @@ int Array::Search(int target) {
             2;  // 여기서 left를 더하는 이유는 영점에서 중앙을 맞춰 주기 위해서
     if (A[mid] == target) {
       return mid;
-      /* code */
+
     } else if (A[mid] < target) {
       left = mid + 1;
     } else {
