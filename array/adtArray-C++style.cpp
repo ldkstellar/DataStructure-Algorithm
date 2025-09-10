@@ -11,6 +11,7 @@ class Array {
   float avg();
   int max();
   int reverse();
+  void reverse2();
   ~Array();
   int *A;
   int size;
@@ -100,7 +101,15 @@ int Array::reverse() {
   }
   return -1;
 }
-
+void Array::reverse2() {
+  int i, j;
+  for (i = 0, j = length - 1; i < j; i++, j--) {
+    int temp;
+    temp = A[i];
+    A[i] = A[j];
+    A[j] = temp;
+  }
+}
 Array::~Array() { delete[] A; }
 
 int main(int argc, char const *argv[]) {
