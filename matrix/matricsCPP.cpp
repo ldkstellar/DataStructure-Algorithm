@@ -19,10 +19,10 @@ class Diagonal {
 };
 
 void Diagonal::Set(int i, int j, int x) {
-  if (i == j) A[i - 1] = x;
+  if (i == j) A[i - 1] = x;  // 가로질러 x 값을 넣는다.
 }
 int Diagonal::Get(int i, int j) {
-  if (i == j) return A[i - 1];
+  if (i == j) return A[i - 1];  // 같으면
   return 0;
 }
 
