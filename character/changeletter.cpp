@@ -1,7 +1,7 @@
 #include <iostream>
 
 inline char* changeLetter(char copy[]) {
-  if (copy[0] >= 97) {
+  if (copy[0] >= 97&&copy[0]<127) {
     copy[0] -= 32;
   }
   return copy;

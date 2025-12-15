@@ -2,3 +2,6 @@
 *.dsYM
 changeletter
 name
+find-vowel-consonents 
+findNull  
+findNullCharacter
