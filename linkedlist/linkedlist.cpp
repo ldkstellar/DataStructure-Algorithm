@@ -5,22 +5,22 @@ class Node {
   int data;
 };
 
-Node* first;  // 전역시작 노드
-int sample = 1;
+Node* first ;  // 전역시작 노드
+ 
 // 링크드 리스트 생성
 void create(int A[],
             int n) {  // 전역변수 first의 포인터가 숨어있다. 함수 파라미터에
   Node *t, *last;
-  first = new Node;
+  first = new Node;//새로운 노드 생성
   first->data = A[0];
   first->next = nullptr;
-  last = first;
+  last = first; //꼬리이동
   for (size_t i = 1; i < n; i++) {
     t = new Node;
     t->data = A[i];
     t->next = nullptr;
-    last->next = t;
-    last = t;
+    last->next = t;//꼬리이동
+    last = t;//꼬리이동
   }
 }
 
@@ -41,10 +41,7 @@ void RDisplay(Node* p) {
   }
 }
 
-void showSample() {
-  sample -= 2;
-  printf("%d", sample);
-}
+
 int main(int argc, char const* argv[]) {
   int A[] = {3, 5, 7, 10, 15};
   ;  // 공간만 잡아 놓음
