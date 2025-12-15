@@ -2,7 +2,6 @@
 int main(int argc, char const *argv[]) {
   int A[3][4] = {{1, 2, 3, 4}, {2, 4, 6, 8}, {3, 5, 7, 9}};
   int *p[3];
-
   for (size_t i = 0; i < 3; i++) {
     p[i] = new int[4]{0};
   }
