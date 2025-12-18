@@ -1,7 +1,9 @@
 .vscode
-*.dsYM
-changeletter
-name
+*.dSYM
+change-letter
+counting-word
+find-length
 find-vowel-consonents 
 findNull  
 findNullCharacter
+print-string

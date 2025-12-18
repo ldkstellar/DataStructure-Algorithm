@@ -18,11 +18,11 @@ class Diagonal {
   int n;
 };
 
-void Diagonal::Set(int i, int j, int x) {
-  if (i == j) A[i - 1] = x;  // 가로질러 x 값을 넣는다.
+void Diagonal::Set(int i, int j, int x) {  // i,j는 좌표
+  if (i == j) A[i - 1] = x;                // 가로질러 x 값을 넣는다.
 }
-int Diagonal::Get(int i, int j) {
-  if (i == j) return A[i - 1];  // 같으면
+int Diagonal::Get(int i, int j) {  // i,j도 좌표
+  if (i == j) return A[i - 1];     // 같으면 좌표 출력
   return 0;
 }
 
