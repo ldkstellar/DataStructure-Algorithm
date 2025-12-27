@@ -29,7 +29,7 @@ int main() {
     temp->next = nullptr;
 
     last->next = temp; // head로 숨기고 있어
-    last = temp;       // 다시 니가 head야
+    last = temp;       // head 이제 last가 아니야
   }
 
   // Display Linked List
